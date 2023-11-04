@@ -1165,4 +1165,528 @@ override a particular setting.
 EditorConfig设置优先于全局Visual Studio文本编辑器设置。只要你在没有.editorconfig文件的代码库中工作，或者.editorconfig文件没有覆盖特定的设置，你的个人编辑器首选项仍然适用。  
 >
 >See the GitHub repo for some [real-world samples](https://github.com/editorconfig/editorconfig/wiki/Projects-Using-EditorConfig).  
-请参阅GitHub repo中的一些[真实样本](https://github.com/editorconfig/editorconfig/wiki/Projects-Using-EditorConfig)。
+请参阅GitHub repo中的一些[真实样本](https://github.com/editorconfig/editorconfig/wiki/Projects-Using-EditorConfig)。  
+
+### Horizontal spacing 水平间距
+Something as simple as spacing can enhance your code’s appearance onscreen.
+Your personal formatting preferences can vary, but try the following
+suggestions to improve readability:  
+简单的间距可以增强你的代码在屏幕上的外观。你个人的格式化偏好可能会有所不同，但是尝试以下建议来提高可读性:  
+
+— **Add spaces to decrease code density:** The extra whitespace can give a
+sense of visual separation between parts of a line.  
+**添加空格来减少代码密度:** 额外的空白可以在一行的各个部分之间产生视觉分离的感觉。  
+```csharp
+// EXAMPLE: add spaces to make lines easier to read
+for (int i = 0; i < 100; i++) { DoSomething(i); }
+
+// AVOID: no spaces
+for(inti=0;i<100;i++){DoSomething(i);}
+```  
+— **Use a single space after a comma between function arguments.**  
+**在函数参数之间的逗号后使用一个空格。**  
+```csharp
+// EXAMPLE: single space after comma between arguments
+CollectItem(myObject, 0, 1);
+
+// AVOID:
+CollectItem(myObject,0,1);
+```  
+— **Don’t add a space after the parenthesis and function arguments.**  
+**在括号和函数参数之间不要添加空格。**  
+```csharp
+// EXAMPLE: no space after the parenthesis and function arguments
+DropPowerUp(myPrefab, 0, 1);
+
+//AVOID:
+DropPowerUp( myPrefab, 0, 1 );
+```  
+— **Don’t use spaces between a function name and parenthesis.**  
+**不要在函数名和括号之间使用空格。**  
+```csharp
+// EXAMPLE: omit spaces between a function name and parenthesis.
+DoSomething()
+
+// AVOID
+DoSomething ()
+```  
+— **Avoid spaces inside brackets.**  
+**避免在括号内使用空格。**  
+```csharp
+// EXAMPLE: omit spaces inside brackets
+x = dataArray[index];
+
+// AVOID
+x = dataArray[ index ];
+```  
+— **Use a single space before flow control conditions:** Add a space between
+the flow comparison operator and the parentheses.  
+**在流控制条件之前使用一个空格:** 在流比较运算符和括号之间添加一个空格。  
+```csharp
+// EXAMPLE: space before condition; separate parentheses with a
+space.
+while (x == y)
+
+// AVOID
+while(x==y)
+```  
+— **Use a single space before and after comparison operators.**  
+**在比较运算符之前和之后使用一个空格。**  
+```csharp
+/ EXAMPLE: space before condition; separate parentheses
+with a space.
+if (x == y)
+
+// AVOID
+if (x==y)
+```  
+— **Keep lines short. Consider horizontal whitespace: **Decide on a standard
+line width (80–120 characters). Break a long line into smaller statements
+rather than letting it overflow.  
+**保持行短。考虑水平空白:** 决定一个标准的行宽(80-120个字符)。将一行长语句分成几个较小的语句，而不是让它溢出。  
+
+— **Maintain indentation/hierarchy:** Indent your code to increase legibility.  
+**保持缩进/层次结构:** 缩进你的代码以增加可读性。  
+
+— **Don’t use column alignment unless needed for readability:** This type of
+spacing aligns the variables but can make it difficult to pair the type with
+the name.  
+**除非需要可读性，否则不要使用列对齐:** 这种类型的间距对齐变量，但可能会使类型与名称配对变得困难。  
+
+Column alignment, however, can be useful for bitwise expressions or
+structs with a lot of data. Just be aware that it may create more work for
+you to maintain the column alignment as you add more items. Some autoformatters
+might also change which part of the column gets aligned.  
+然而，列对齐对于位表达式或具有大量数据的结构可能是有用的。只要注意，随着你添加更多的项目，它可能会为你创建更多的工作来维护列对齐。一些自动格式化程序也可能会改变列对齐的哪一部分。  
+
+```csharp
+// EXAMPLE: One space between type and name
+public float Speed = 12f;
+public float Gravity = -10f;
+public float JumpHeight = 2f;
+
+public Transform GroundCheck;
+public float GroundDistance = 0.4f;
+public LayerMask GroundMask;
+
+// AVOID: column alignment
+
+public float            Speed = 12f;
+public float            Gravity = -10f;
+public float            JumpHeight = 2f;
+public Transform        GroundCheck;
+public float            GroundDistance = 0.4f;
+public LayerMask        GroundMask;
+```  
+
+### Vertical spacing 垂直间距  
+
+You can use the vertical spacing to your advantage as well. Keep related
+parts of the script together and use blank lines to your advantage. Try these
+suggestions to organize your code from top to bottom:  
+你也可以利用垂直间距。将脚本的相关部分放在一起，并利用空白行。尝试以下建议，从上到下组织你的代码:  
+
+— **Group dependent and/or similar methods together:** Code needs to be
+logical and coherent. Keep methods that do the same thing next to one
+another, so someone reading your logic doesn’t have to jump around the
+file.  
+**将依赖和/或相似的方法分组在一起:** 代码需要逻辑和连贯。将做同样事情的方法放在一起，这样阅读你的逻辑的人就不必在文件中跳来跳去。  
+
+— **Use the vertical whitespace to your advantage to separate distinct parts
+of your class:** For example, you can add two blank lines between:  
+**利用垂直空白来分隔类的不同部分:** 例如，你可以在以下两个空行之间添加两个空行:  
+
+— Variable declarations and methods  
+变量声明和方法  
+
+— Classes and Interfaces  
+类和接口  
+
+— if-then-else blocks (if it helps readability)  
+if-then-else块(如果它有助于可读性)  
+
+Keep this to a minimum and note on your style guide where applicable.  
+将其最小化，并在适用的地方在你的样式指南中注明。  
+
+### Regions 区域  
+
+The #region directive enables you to collapse and hide sections of code in C#
+files, making large files more manageable and easier to read.  
+#region指令使你能够折叠和隐藏C#文件中的代码部分，使大文件更易于管理和阅读。  
+
+However, if you follow the general advice for Classes from this guide, your class
+size should be manageable and the #region directive superfluous. Break your
+code into smaller classes instead of hiding code blocks behind regions. You will
+be less inclined to add a region if the source file is short.  
+然而，如果你遵循本指南中类的一般建议，你的类大小应该是可管理的，#region指令是多余的。将你的代码分成较小的类，而不是将代码块隐藏在区域后面。如果源文件很短，你就不太可能添加一个区域。  
+
+>**Note:** Many developers consider regions to be code smells or anti-patterns.
+Decide as a team on which side of the debate you fall.  
+**注意:** 许多开发人员认为区域是代码气味或反模式。作为一个团队决定你在辩论的哪一边。  
+  
+>#### Code formatting in Visual Studio for Mac 在Visual Studio for Mac中的代码格式化  
+>
+>Don’t despair if these formatting rules seem overwhelming. Modern IDEs make
+it efficient to set up and enforce them. You can create a template of formatting
+rules and then convert your project files at once.  
+如果这些格式化规则看起来令人不知所措，不要绝望。现代IDE使得设置和强制执行它们变得高效。你可以创建一个格式化规则的模板，然后一次转换你的项目文件。  
+>
+>To set up formatting rules for the script editor:  
+要为脚本编辑器设置格式化规则:  
+>
+>— In Visual Studio (Windows), navigate to **Tools > Options**. Locate **Text
+Editor > C# > Code Style Formatting**.   
+在Visual Studio(Windows)中，导航到**Tools > Options**。找到**Text Editor > C# > Code Style Formatting**。
+>
+>Use the settings to modify the General, Indentation, New Lines, Spacing,
+and Wrapping options.  
+使用这些设置来修改General、Indentation、New Lines、Spacing和Wrapping选项。  
+>
+>[图片]  Code style formatting options  代码样式格式选项  
+>
+>— In Visual Studio for Mac, select **Visual Studio > Preferences, then
+navigate to Source Code > Code Formatting > C# source code**.  
+在Visual Studio for Mac中，选择**Visual Studio > Preferences**，然后导航到**Source Code > Code Formatting > C# source code**。  
+>
+>Select the Policy at the top. Then set your spacing and indentation in the
+Text Style tab. In the C# Format tab, adjust the Indentation, New Lines,
+Spacing, and Wrapping settings.  
+在顶部选择Policy。然后在Text Style选项卡中设置你的间距和缩进。在C# Format选项卡中，调整Indentation、New Lines、Spacing和Wrapping设置。  
+>
+>[图片]  The Preview window shows off your style guide choices. 预览窗口展示了你的样式指南选择。  
+>
+>If at any time you want to force your script file to conform to the style guide:  
+如果你想随时强制你的脚本文件符合样式指南:  
+>
+>— In Visual Studio (Windows), go to **Edit > Advanced > Format Document
+(Ctrl + K, Ctrl + D** hotkey chord). If you want only to format white spaces
+and tab alignment, you can also use Run Code Cleanup (**Ctrl + K , Ctrl + E**)
+at the bottom of the editor.  
+在Visual Studio(Windows)中，转到**Edit > Advanced > Format Document(Ctrl + K, Ctrl + D**热键和弦)。如果你只想格式化空格和制表符对齐，你也可以在编辑器底部使用Run Code Cleanup(**Ctrl + K , Ctrl + E**)。  
+>
+>— In Visual Studio for Mac, go to **Edit > Format Document (Ctrl + I** hotkey)  
+在Visual Studio for Mac中，转到**Edit > Format Document (Ctrl + I**  
+>
+>On Windows, you can also share your editor settings from **Tools > Import and
+Export Settings**. Export a file with the style guide’s C# code formatting and then
+have every team member import that file.  
+在Windows上，你还可以从**Tools > Import and Export Settings**共享你的编辑器设置。导出一个带有样式指南的C#代码格式化的文件，然后让每个团队成员导入该文件。  
+>
+>[图片]  Exporting the C# code formatting to share 导出C#代码格式以共享  
+>
+>Visual Studio makes it easy to follow the style guide. Formatting then becomes
+as simple as using a hotkey.  
+Visual Studio使得遵循样式指南变得很容易。然后，格式化就像使用热键一样简单。  
+>
+>Note: You can configure an [EditorConfig](https://editorconfig.org/) file (see above) instead of importing
+and exporting Visual Studio settings. Doing this allows you to share formatting
+more easily across different IDEs, and it has the added benefit of working with
+version control. See the [.NET code style rule options](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/code-style-rule-options) for more information.  
+注意: 你可以配置一个[EditorConfig](https://editorconfig.org/)文件(见上文)，而不是导入和导出Visual Studio设置。这样做可以更轻松地在不同的IDE之间共享格式，而且它还有一个额外的好处，就是可以与版本控制一起使用。有关更多信息，请参阅[.NET代码样式规则选项](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/code-style-rule-options)。  
+>
+>Though this isn’t specific to clean code, be sure to check out [10 ways to speed
+up your programming workflow in Unity with Visual Studio](https://blog.unity.com/engine-platform/10-ways-to-speed-up-your-programming-workflows-in-unity-with-visual-studio-2019). Clean code is much
+easier to format and refactor if you apply these productivity tips.  
+虽然这不是特定于清洁代码的，但一定要查看[10 ways to speed up your programming workflow in Unity with Visual Studio](https://blog.unity.com/engine-platform/10-ways-to-speed-up-your-programming-workflows-in-unity-with-visual-studio-2019)。如果你应用这些生产力技巧，清洁代码就更容易格式化和重构。  
+
+
+## CLASSSES 类  
+"NO ONE IN THE BRIEF HISTORY OF COMPUTING HAS EVER WRITTEN A PIECE OF PERFECT SOFTWARE. IT’S UNLIKELY THAT YOU’LL BE THE FIRST.”  – Andy Hunt, author of The Pragmatic Programmer  
+“在计算机的简短历史上，没有人写过一段完美的软件。你不太可能是第一个。”——《The Pragmatic Programmer》的作者Andy Hunt  
+
+According to Robert C. Martin’s Clean Code, the first rule of classes is that they
+should be small. The second rule is they should be even smaller than that.  
+根据Robert C. Martin的《Clean Code》，类的第一条规则是它们应该很小。第二条规则是它们应该比这还要小。  
+
+Limiting the size of each class makes it more focused and cohesive. It’s easy to
+keep adding on top of an existing class until it overextends with functionality.
+Instead make a conscious effort to keep the classes short. Big, bloated classes
+become difficult to read and troubleshoot.  
+限制每个类的大小使其更加专注和内聚。很容易在现有类的基础上添加功能，直到它过度扩展。相反，要有意识地保持类的简短。大而臃肿的类变得难以阅读和排除故障。  
+
+### The newspaper metaphor  报纸的隐喻  
+
+Imagine the source code of a class as a news article. You start reading from the
+top, where the headline and byline catch your eye. The lead-in paragraph gives
+you a rough summary, then you glean more details as you continue downward.  
+想象一下一个类的源代码就像一篇新闻文章。你从头开始阅读，标题和署名吸引了你的注意。引语段给你一个粗略的摘要，然后你在继续向下阅读时获得更多的细节。  
+
+Journalists call this the [inverted pyramid](https://en.wikipedia.org/wiki/Inverted_pyramid_(journalism)). The broad strokes of most
+newsworthy items appear at the beginning. You only get the story’s nuances as
+you read to the end.  
+记者称之为[倒金字塔](https://en.wikipedia.org/wiki/Inverted_pyramid_(journalism))。大多数新闻事件的大致轮廓出现在开头。只有当你读到最后，你才能得到这个故事的细微之处。  
+
+Your class should also follow this basic pattern. Organize top-down and think of
+your functions as forming a hierarchy. Some methods serve a higher-level and
+lay the groundwork for the big picture. Put these first, then, place lower-level
+functions with implementation details later.  
+你的类也应该遵循这个基本模式。自上而下地组织，把你的函数看作是一个层次结构。一些方法服务于更高层次，为大局奠定基础。首先放置这些，然后，稍后放置具有实现细节的低级函数。  
+
+For example, you might make a method called ThrowBall that references other
+methods, SetInitialVelocity and CalculateTrajectory. Keep ThrowBall
+first, since that describes the main action. Then, add the supporting methods
+below it.  
+例如，你可以制作一个名为ThrowBall的方法，该方法引用其他方法，SetInitialVelocity和CalculateTrajectory。保持ThrowBall在前，因为它描述了主要动作。然后，在它下面添加支持方法。  
+
+Though each news article is short, a newspaper or news website will have many
+such collected stories. When taken together, the articles comprise a unified,
+functional whole. Think of your Unity project in the same way. It has numerous
+classes that must come together to form a larger, yet coherent, application.  
+虽然每篇新闻文章都很短，但报纸或新闻网站会有许多这样的文章。当这些文章放在一起时，它们构成了一个统一的、功能完整的整体。以同样的方式来思考你的Unity项目。它有许多类必须结合在一起，形成一个更大的、但连贯的应用程序。  
+  
+>#### Class organization 类组织  
+>
+>Each class will need some standardization. Group class members into sections
+to organize them:  
+每个类都需要一些标准化。将类成员分组到部分中以组织它们:  
+>
+>— Fields  字段  
+— Properties 属性  
+— Events / Delegates 事件/委托  
+— Monobehaviour Methods (Awake, Start, OnEnable, OnDisable, OnDestroy,
+etc.)  Monobehaviour方法(Awake, Start, OnEnable, OnDisable, OnDestroy,等等)  
+— Public Methods  公共方法  
+— Private Methods  私有方法  
+>
+>Recall the recommended class naming rules in Unity: The source file name must
+match the name of the Monobehaviour in the file. You might have other internal
+classes in the file, but only one Monobehaviour should exist per file.  
+回想一下Unity中推荐的类命名规则:源文件名必须与文件中Monobehaviour的名字匹配。你可能在文件中有其他内部类，但每个文件只能有一个Monobehaviour。  
+
+### Single-responsibility principle 单一职责原则
+Remember the goal is to keep each class short. In software design, the singleresponsibility principle guides you toward simplicity.  
+记住目标是保持每个类的长度短。在软件设计中，单一职责原则指导你走向简单。  
+
+The idea is that each module, class, or function is responsible for one thing.
+Suppose you want to build a game of Pong. You might start with classes for a
+paddle, a ball, and a wall.  
+这个想法是每个模块、类或函数都负责一件事。假设你想建一个乒乓球游戏。你可以从球拍、球和墙的类开始。  
+
+[图片]  Fancy a game of Pong? 想玩乒乓球吗?  
+
+For example, a Paddle class might need to:  
+例如，一个Paddle类可能需要:  
+—Store basic data about how fast it can move  存储关于它可以移动的速度的基本数据  
+— Check keyboard input  检查键盘输入  
+— Move the paddle in response  响应移动挡板  
+— Play a sound when colliding with a ball  碰撞球时播放声音  
+
+Because the game design is simple, you can incorporate all of these things into
+a basic Paddle class. In fact, it’s entirely possible to create one Monobehaviour
+that does everything you need.  
+因为游戏设计很简单，你可以将所有这些东西都纳入一个基本的Paddle类。事实上，完全有可能创建一个Monobehaviour来做你需要的一切。  
+[图片]  One Monobehaviour doing everything 一个Monobehaviour做一切  
+
+However, keeping everything as part of one class, even a small one, complicates
+the design by mixing responsibilities. The data intertwines with the input, while
+the class needs to apply logic to both. Contrary to the KISS principle, you’ve
+taken a few simple things and entangled them.  
+然而，将所有东西都作为一个类的一部分，即使是一个小类，也会通过混合职责来复杂化设计。数据与输入交织在一起，而类需要对两者都应用逻辑。与KISS原则相反，你已经把一些简单的东西纠缠在一起了。  
+
+Instead, break your Paddle class into smaller classes, each with a single
+responsibility. Separate data into its own PaddleData class or use a
+[ScriptableObject](https://docs.unity3d.com/Manual/class-ScriptableObject.html). Then refactor everything else into a PaddleInput class, a PaddleMovement class, and a PaddleAudio class.  
+相反，将你的Paddle类分成更小的类，每个类都有一个单一的职责。将数据分离到它自己的PaddleData类中，或者使用一个[ScriptableObject](https://docs.unity3d.com/Manual/class-ScriptableObject.html)。然后将其他所有内容重构为PaddleInput类、PaddleMovement类和PaddleAudio类。  
+
+A PaddleLogic class can process the input from the PaddleInput. Applying
+the speed information from the PaddleData, it can shift the paddle using the
+PaddleMovement. Finally, the PaddleLogic can notify the PaddleAudio to play a
+sound when the ball collides with the paddle.  
+PaddleLogic类可以处理来自PaddleInput的输入。应用来自PaddleData的速度信息，它可以使用PaddleMovement移动挡板。最后，当球与球拍碰撞时，PaddleLogic可以通知PaddleAudio播放声音。  
+[图片]  Refactor a Paddle class into single responsibilities 重构一个Paddle类到单一职责  
+
+Each class does one thing in this redesign and fits into small, digestible pieces.
+You don’t need to scroll through several screens to follow the code.  
+在这个重新设计中，每个类只做一件事，适合小而易于消化的东西。你不需要滚动几个屏幕来跟踪代码。  
+
+You’ll still require a Paddle script but its sole job is to tie these other classes
+together. The bulk of the functionality is split into the other classes.  
+你仍然需要一个Paddle脚本，但它的唯一工作是将这些其他类联系在一起。大部分功能都分成了其他类。  
+
+Note that clean code is not always the most compact code. Even when you use
+shorter classes, the total number of lines may increase during refactoring. However,
+each individual class becomes easier to read. When the time comes to debug or
+add new features, this simplified structure helps keep everything in its place.  
+注意，清洁代码并不总是最紧凑的代码。即使你使用更短的类，在重构过程中，总行数也可能会增加。然而，每个单独的类变得更容易阅读。当时机成熟时，调试或添加新功能，这种简化的结构有助于保持一切井然有序。  
+
+>#### Refactoring example 重构示例  
+>
+>For a more in-depth look at refactoring a simple project, see [How to architect
+code as your project scales](https://unity.com/how-to/how-architect-code-your-project-scales). This article demonstrates how to break down larger Monobehaviours into smaller pieces using the single-responsibility principle.  
+有关重构一个简单项目的更深入的了解，请参阅[How to architect code as your project scales](https://unity.com/how-to/how-architect-code-your-project-scales)。本文演示了如何使用单一职责原则将较大的Monobehaviour分解成较小的部分。  
+>
+>You can also watch Mikael Kalms’s original presentation, “[From Pong to
+15-person project](https://www.youtube.com/watch?v=1le4vScG3gk),” from Unite Berlin.  
+
+
+## MMETHODS 方法  
+"YOU KNOW YOU ARE WORKING ON CLEAN CODE WHEN EACH ROUTINE YOU READ TURNS OUT TO BE PRETTY MUCH WHAT YOU EXPECTED.”  – Ward Cunningham, inventor of Wiki and cofounder of eXtreme Programming  
+“当你读到的每一个例程都变成了你所期望的东西时，你就知道你正在处理干净的代码。”——Ward Cunningham，Wiki的发明者和eXtreme Programming的联合创始人  
+
+Like classes, methods should be small with a single responsibility. Each method
+should describe one action or answer one question. It shouldn’t do both.  
+像类一样，方法应该是小的，只有一个职责。每个方法应该描述一个动作或回答一个问题。它不应该两者都做。  
+
+A good name for a method reflects what it does. For example, GetDistanceToTarget is a name that clarifies its intended purpose.  
+一个好的方法名反映了它的作用。例如，GetDistanceToTarget是一个可以澄清其预期目的的名字。  
+
+Try the following suggestions when you create methods for your custom
+classes:  
+当你为你的自定义类创建方法时，请尝试以下建议:  
+
+— **Use fewer arguments**: Arguments can increase the complexity of your
+method. Reduce their number to make your methods easier to read and test.  
+**使用更少的参数**: 参数可以增加你的方法的复杂性。减少它们的数量，使你的方法更容易阅读和测试。  
+
+— **Avoid excessive overloading**: You can generate an endless permutation of
+method overloads. Select the few that reflect how you will call the method
+and implement those. If you do overload a method, prevent confusion by
+making sure each method signature has a distinct number of arguments.  
+**避免过度重载**: 你可以生成一个无限的方法重载排列。选择反映你将如何调用方法的少数方法，并实现这些方法。如果你确实重载了一个方法，请确保每个方法签名都有一个不同数量的参数，以防止混淆。  
+
+— **Avoid side effects**: A method only needs to do what its name advertises.
+Avoid modifying anything outside of its scope. Pass in arguments by value
+instead of by reference when possible. If sending back results via the out
+or ref keyword, make sure that’s the one thing you intend the method to
+accomplish.  
+**避免副作用**: 一个方法只需要做它的名字所说的。避免修改其范围之外的任何东西。如果可能的话，通过值而不是通过引用传递参数。如果通过out或ref关键字发送结果，请确保这是你打算完成的唯一事情。  
+
+Though side effects are useful for certain tasks, they can lead to
+unintended consequences. Write a method without side effects to cut
+down on unexpected behavior.  
+虽然副作用对于某些任务是有用的，但它们可能会导致意想不到的后果。编写一个没有副作用的方法来减少意外行为。  
+
+— **Instead of passing in a flag, make another method**: Don’t set up your
+method to work in two different modes based on a flag. Make two
+methods with distinct names. For example, don’t make a GetAngle
+method that returns degrees or radians based on a flag setting. Instead
+make methods for GetAngleInDegrees and GetAngleInRadians.  
+**不要传递一个标志，而是创建另一个方法**: 不要根据标志设置使你的方法在两种不同的模式下工作。使用不同的名称创建两个方法。例如，不要创建一个GetAngle方法，它根据标志设置返回度或弧度。而是为GetAngleInDegrees和GetAngleInRadians创建方法。  
+
+While the Boolean flag as an argument seems innocuous, it can lead to [tangled
+implementation](https://martinfowler.com/bliki/FlagArgument.html) or broken single-responsibility.  
+虽然布尔标志作为参数似乎是无害的，但它可能会导致[纠缠的实现](https://martinfowler.com/bliki/FlagArgument.html)或破坏单一职责。  
+
+### Extension methods  扩展方法  
+
+[Extension methods](https://learn.unity.com/tutorial/kuo-zhan-fang-fa) offer a way to add additional functionality to classes that might otherwise be sealed and can be a clean way to extend the UnityEngine API.  
+扩展方法提供了一种方法来为可能被封装的类添加额外的功能，并且可以是扩展UnityEngine API的一种干净的方法。  
+
+To create an extension method, make a static method and use the this keyword
+before the first argument, which will be the type you want to extend.  
+要创建一个扩展方法，创建一个静态方法，并在第一个参数之前使用this关键字，这将是你想要扩展的类型。  
+
+For example, suppose you want to make a method called ResetTransformation
+to remove any scaling, rotation, or translation from a GameObject.  
+You can create a static method passing in a Transform for the first argument
+with the this keyword:  
+例如，假设你想创建一个名为ResetTransformation的方法，以从GameObject中删除任何缩放、旋转或平移。  
+```csharp
+// EXAMPLE: Define an extension method
+public static class TransformExtensions
+{
+    public static void ResetTransformation(this Transform transform)
+    {
+        transform.position = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
+        transform.localScale = Vector3.one;
+    }
+}
+```  
+Then, when you want to use it, invoke the ResetTransformation method. The
+ResetOnStart class calls it on the current Transform during Start.  
+然后，当你想使用它时，调用ResetTransformation方法。ResetOnStart类在Start期间调用它的当前Transform。  
+```csharp
+// EXAMPLE: Calling the extension method
+
+public class ResetOnStart : MonoBehaviour
+{
+    void Start()
+     {
+        transform.ResetTransformation();
+     }
+}
+```  
+For organization purposes, define your extension methods in a static class.
+For example, you create a class called TransformExtensions for methods that
+extend Transforms, Vector3Extensions for extending Vector3s, and so on.  
+出于组织目的，在一个静态类中定义你的扩展方法。例如，你创建一个名为TransformExtensions的类，用于扩展Transforms、Vector3Extensions用于扩展Vector3s，等等。  
+
+Extension methods can build many useful utilities without the need to create
+more Monobehaviours. See [Unity Learn: Extension Methods](https://learn.unity.com/tutorial/kuo-zhan-fang-fa) to add them to your gamedev bag of tricks.  
+扩展方法可以构建许多有用的实用程序，而无需创建更多的Monobehaviours。请参阅[Unity Learn: Extension Methods](https://learn.unity.com/tutorial/kuo-zhan-fang-fa)将它们添加到你的gamedev技巧包中。  
+
+>#### The DRY principle: Don’t repeat yourself  DRY原则:不要重复自己  
+>
+>In The Pragmatic Programmer, Andy Hunt and Dave Thomas formulated the
+DRY principle, or, “don’t repeat yourself.” This oft-spoken mantra in software
+engineering advises programmers to avoid duplicate or repetitious logic.  
+在《The Pragmatic Programmer》中，Andy Hunt和Dave Thomas制定了DRY原则，即“不要重复自己”。这个在软件工程中经常被提及的口头禅建议程序员避免重复或重复的逻辑。  
+>
+>In doing so, you can ease bug fixing and maintenance costs. If you follow the
+single-responsibility principle, you shouldn’t need to change an unrelated piece
+of code whenever you modify a class or a method. Quashing a logical bug in a
+DRY program stops it everywhere.  
+这样做可以减轻错误修复和维护成本。如果你遵循单一职责原则，当你修改一个类或一个方法时，你不应该需要改变一个不相关的代码片段。在DRY程序中消除一个逻辑错误会使它在任何地方停止。  
+>
+>The opposite of DRY is WET (“we enjoy typing” or “write everything twice”).
+Programming is WET when there are unnecessary repetitions in the code.  
+DRY的反义词是WET(“我们喜欢打字”或“写两遍”)。当代码中有不必要的重复时，编程是湿的。  
+>
+>Imagine there are two ParticleSystems (explosionA and explosionB) and two
+AudioClips (soundA and soundB). Each ParticleSystem needs to play with its
+respective sound, which you can achieve with simple methods like this.  
+想象一下，有两个ParticleSystem(explosionA和explosionB)和两个AudioClips(soundA和soundB)。每个ParticleSystem都需要与其各自的声音一起播放，你可以用这样简单的方法来实现。  
+```csharp
+// EXAMPLE: WRITE EVERYTHING TWICE
+
+private void PlayExplosionA(Vector3 hitPosition)
+{
+    explosionA.transform.position = hitPosition;
+    explosionA.Stop();
+    explosionA.Play();
+    AudioSource.PlayClipAtPoint(soundA, hitPosition);
+}
+
+private void PlayExplosionB(Vector3 hitPosition)
+{
+    explosionB.transform.position = hitPosition;
+    explosionB.Stop();
+    explosionB.Play();
+    AudioSource.PlayClipAtPoint(soundB, hitPosition);
+}
+
+```  
+>Here each method takes a Vector3 position to move the ParticleSystem into
+place for playback. First, stop the particles (in case they are already playing)
+and play the simulation. The AudioSource’s static PlayClipAtPoint method then
+creates a sound effect at the same location.  
+这里每个方法都需要一个Vector3位置来移动ParticleSystem到播放位置。首先，停止粒子(以防它们已经在播放)，然后播放模拟。AudioSource的静态PlayClipAtPoint方法在同一位置创建一个声音效果。  
+>
+>One method is a cut-and-paste version of the other with a little text
+replacement. Though this works, you need to make a new method – with
+duplicate logic – every time you want to create an explosion.  
+一个方法是另一个方法的剪切和粘贴版本，只是有一点文本替换。虽然这样做可以，但每次你想创建一个爆炸时，你都需要创建一个新的方法——有重复逻辑。  
+>
+>Instead, refactor it into one PlayFXWithSound method like this:  
+相反，将它重构为一个PlayFXWithSound方法，如下所示:  
+```csharp
+// EXAMPLE: Refactored
+
+private void PlayFXWithSound(ParticleSystem particle,AudioClip clip, Vector3 hitPosition)
+{
+    particle.transform.position = hitPosition;
+    particle.Stop();
+    particle.Play();
+
+    AudioSource.PlayClipAtPoint(clip, hitPosition);
+}
+```  
+>Add more ParticleSystems and AudioClips, and you can continue using this same method to play them in concert.  
+添加更多的ParticleSystem和AudioClips，你可以继续使用这个相同的方法来演奏它们。  
+>
+>Note that it’s possible to duplicate code without violating the DRY principle. It’s more important that you don’t duplicate logic.  
+注意，可以在不违反DRY原则的情况下复制代码。更重要的是，你不要重复逻辑。  
+>
+>Here, we’ve extracted the core functionality into the PlayFXWithSound method. If you need to adjust the logic, you only need to change it in one method rather than in both PlayExplosionA and PlayExplosionB.  
+在这里，我们将核心功能提取到PlayFXWithSound方法中。如果你需要调整逻辑，你只需要在一个方法中改变它，而不是在PlayExplosionA和PlayExplosionB中都改变它。  
