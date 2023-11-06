@@ -777,7 +777,7 @@ public class Player : MonoBehaviour
 Reference this serializable class from another class. The resulting variables appear within collapsible units in the Inspector.  
 从另一个类引用这个可序列化的类。结果变量出现在检查器中的可折叠单元中。  
 
-[图片]  
+![插图](https://github.com/ruaruachou/UnityEbook-create-a-c-style-guide-write-cleaner-code-that-scales/blob/main/Picture/1.png?raw=true)
 A serializable class or struct can help organize the Inspector.  
 可序列化的类或结构可以帮助组织inspector。
 
@@ -833,14 +833,14 @@ Try these tips:
 In Visual Studio (Windows), navigate to **Tools > Options > Text Editor > C# > Tabs**.  
 在Visual Studio(Windows)中，导航到**Tools > Options > Text Editor > C# > Tabs**。  
 
-[图片]  
+![插图](https://github.com/ruaruachou/UnityEbook-create-a-c-style-guide-write-cleaner-code-that-scales/blob/main/Picture/2.png?raw=true)
 Tabs settings in Visual Studio  
 Visual Studio中的制表符设置  
 
 On Visual Studio for Mac, navigate to **Preferences > Source Code > C# Source Code**. Select the Text Style to adjust the settings.  
 在Visual Studio for Mac上，导航到**Preferences > Source Code > C# Source Code**。选择文本样式来调整设置。  
 
-[图片]  
+![插图](https://github.com/ruaruachou/UnityEbook-create-a-c-style-guide-write-cleaner-code-that-scales/blob/main/Picture/3.png?raw=true)
 Convert tabs to spaces to make indentation uniform.  
 将制表符转换为空格，使缩进统一。  
 
@@ -1071,7 +1071,7 @@ However, if you follow the general advice for Classes from this guide, your clas
 >Use the settings to modify the General, Indentation, New Lines, Spacing, and Wrapping options.  
 使用这些设置来修改General、Indentation、New Lines、Spacing和Wrapping选项。  
 >
->[图片]  Code style formatting options  代码样式格式选项  
+>![插图](https://github.com/ruaruachou/UnityEbook-create-a-c-style-guide-write-cleaner-code-that-scales/blob/main/Picture/4.png?raw=true)  Code style formatting options  代码样式格式选项  
 >
 >— In Visual Studio for Mac, select **Visual Studio > Preferences, then navigate to Source Code > Code Formatting > C# source code**.  
 在Visual Studio for Mac中，选择**Visual Studio > Preferences**，然后导航到**Source Code > Code Formatting > C# source code**。  
@@ -1079,7 +1079,7 @@ However, if you follow the general advice for Classes from this guide, your clas
 >Select the Policy at the top. Then set your spacing and indentation in the Text Style tab. In the C# Format tab, adjust the Indentation, New Lines, Spacing, and Wrapping settings.  
 在顶部选择Policy。然后在Text Style选项卡中设置你的间距和缩进。在C# Format选项卡中，调整Indentation、New Lines、Spacing和Wrapping设置。  
 >
->[图片]  The Preview window shows off your style guide choices. 预览窗口展示了你的样式指南选择。  
+>![插图](https://github.com/ruaruachou/UnityEbook-create-a-c-style-guide-write-cleaner-code-that-scales/blob/main/Picture/5.png?raw=true)  The Preview window shows off your style guide choices. 预览窗口展示了你的样式指南选择。  
 >
 >If at any time you want to force your script file to conform to the style guide:  
 如果你想随时强制你的脚本文件符合样式指南:  
@@ -1093,7 +1093,7 @@ However, if you follow the general advice for Classes from this guide, your clas
 >On Windows, you can also share your editor settings from **Tools > Import and Export Settings**. Export a file with the style guide’s C# code formatting and then have every team member import that file.  
 在Windows上，你还可以从**Tools > Import and Export Settings**共享你的编辑器设置。导出一个带有样式指南的C#代码格式化的文件，然后让每个团队成员导入该文件。  
 >
->[图片]  Exporting the C# code formatting to share 导出C#代码格式以共享  
+>![插图](https://github.com/ruaruachou/UnityEbook-create-a-c-style-guide-write-cleaner-code-that-scales/blob/main/Picture/6.png?raw=true)  Exporting the C# code formatting to share 导出C#代码格式以共享  
 >
 >Visual Studio makes it easy to follow the style guide. Formatting then becomes as simple as using a hotkey.  
 Visual Studio使得遵循样式指南变得很容易。然后，格式化就像使用热键一样简单。  
@@ -1155,7 +1155,7 @@ Remember the goal is to keep each class short. In software design, the singleres
 The idea is that each module, class, or function is responsible for one thing. Suppose you want to build a game of Pong. You might start with classes for a paddle, a ball, and a wall.  
 这个想法是每个模块、类或函数都负责一件事。假设你想建一个乒乓球游戏。你可以从球拍、球和墙的类开始。  
 
-[图片]  Fancy a game of Pong? 想玩乒乓球吗?  
+![插图](https://github.com/ruaruachou/UnityEbook-create-a-c-style-guide-write-cleaner-code-that-scales/blob/main/Picture/7.png?raw=true)  Fancy a game of Pong? 想玩乒乓球吗?  
 
 For example, a Paddle class might need to:  
 例如，一个Paddle类可能需要:  
@@ -1166,7 +1166,7 @@ For example, a Paddle class might need to:
 
 Because the game design is simple, you can incorporate all of these things into a basic Paddle class. In fact, it’s entirely possible to create one Monobehaviour that does everything you need.  
 因为游戏设计很简单，你可以将所有这些东西都纳入一个基本的Paddle类。事实上，完全有可能创建一个Monobehaviour来做你需要的一切。  
-[图片]  One Monobehaviour doing everything 一个Monobehaviour做一切  
+![插图](https://github.com/ruaruachou/UnityEbook-create-a-c-style-guide-write-cleaner-code-that-scales/blob/main/Picture/8.png?raw=true)  One Monobehaviour doing everything 一个Monobehaviour做一切  
 
 However, keeping everything as part of one class, even a small one, complicates the design by mixing responsibilities. The data intertwines with the input, while the class needs to apply logic to both. Contrary to the KISS principle, you’ve taken a few simple things and entangled them.  
 然而，将所有东西都作为一个类的一部分，即使是一个小类，也会通过混合职责来复杂化设计。数据与输入交织在一起，而类需要对两者都应用逻辑。与KISS原则相反，你已经把一些简单的东西纠缠在一起了。  
@@ -1176,7 +1176,7 @@ Instead, break your Paddle class into smaller classes, each with a single respon
 
 A PaddleLogic class can process the input from the PaddleInput. Applying the speed information from the PaddleData, it can shift the paddle using the PaddleMovement. Finally, the PaddleLogic can notify the PaddleAudio to play a sound when the ball collides with the paddle.  
 PaddleLogic类可以处理来自PaddleInput的输入。应用来自PaddleData的速度信息，它可以使用PaddleMovement移动挡板。最后，当球与球拍碰撞时，PaddleLogic可以通知PaddleAudio播放声音。  
-[图片]  Refactor a Paddle class into single responsibilities 重构一个Paddle类到单一职责  
+![插图](https://github.com/ruaruachou/UnityEbook-create-a-c-style-guide-write-cleaner-code-that-scales/blob/main/Picture/9.png?raw=true)  Refactor a Paddle class into single responsibilities 重构一个Paddle类到单一职责  
 
 Each class does one thing in this redesign and fits into small, digestible pieces. You don’t need to scroll through several screens to follow the code.  
 在这个重新设计中，每个类只做一件事，适合小而易于消化的东西。你不需要滚动几个屏幕来跟踪代码。  
@@ -1370,7 +1370,7 @@ Transform targetToShoot;
 [Tooltip(“The amount of side-to-side friction.”)]
 public float Grip;
 ```  
-[图片]  Tooltip in the Inspector. 工具提示在检查器中。  
+![插图](https://github.com/ruaruachou/UnityEbook-create-a-c-style-guide-write-cleaner-code-that-scales/blob/main/Picture/10.png?raw=true)  Tooltip in the Inspector. 工具提示在检查器中。  
 
 — **You can also use a summary [XML tag](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/xmldoc/recommended-tags#summary) in front of public methods or functions**: Visual Studio can provide IntelliSense for many common XMLstyle comments.  
 **你也可以在公共方法或函数前面使用一个摘要[XML标签](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/xmldoc/recommended-tags#summary)**: Visual Studio可以为许多常见的XML样式注释提供智能感知。  
@@ -1590,7 +1590,7 @@ A dash (-) character separates the different parts of the name:
 If you want to apply a script template to a specific Unity project, copy and paste the entire ScriptTemplates folder directly under the project’s Assets.  
 如果你想将脚本模板应用到特定的Unity项目中，请将整个ScriptTemplates文件夹复制并粘贴到项目的Assets下。  
 
-[图片]  The ScriptTemplates copied to the Unity project. 脚本模板复制到Unity项目。  
+![插图](https://github.com/ruaruachou/UnityEbook-create-a-c-style-guide-write-cleaner-code-that-scales/blob/main/Picture/11.png?raw=true)  The ScriptTemplates copied to the Unity project. 脚本模板复制到Unity项目。  
 
 Next, create new script templates or modify the originals to fit your preferences. Delete any script templates from the project if you don’t plan on changing them.  
 接下来，创建新的脚本模板或修改原始的脚本模板以适应你的偏好。如果你不打算更改它们，请从项目中删除任何脚本模板。  
@@ -1619,7 +1619,7 @@ This creates a blank ScriptableObject script, complete with the CreateAssetMenu 
 Restart the Editor after you save the script template. Next time you should see an extra option in the Create menu.  
 在保存脚本模板后重新启动编辑器。下次你应该在创建菜单中看到一个额外的选项。  
 
-[图片]  A custom script template adds a new menu item in the Create menu. 自定义脚本模板在创建菜单中添加了一个新的菜单项。  
+![插图](https://github.com/ruaruachou/UnityEbook-create-a-c-style-guide-write-cleaner-code-that-scales/blob/main/Picture/12.png?raw=true)  A custom script template adds a new menu item in the Create menu. 自定义脚本模板在创建菜单中添加了一个新的菜单项。  
 Create a new ScriptableObject script (and a corresponding ScriptableObject asset) from the Create menu.  
 从创建菜单中创建一个新的ScriptableObject脚本(以及相应的ScriptableObject资产)。  
 
@@ -1692,6 +1692,6 @@ Unity测试框架的一般工作流程是:
 
 — **Add Play mode tests in the Editor or as standalone**: The default Test Assembly works in Edit Mode. If you want unit tests to work at runtime, create a separate assembly in Play Mode. Configure this for your standalone build as well (with the results of the test displayed in the Editor).  
 — **在编辑器中或作为独立的播放模式添加播放模式测试**:默认的Test Assembly在编辑模式下工作。如果你想让单元测试在运行时工作，在播放模式下创建一个单独的程序集。同样，也要为你的独立构建进行配置(在编辑器中显示测试结果)。  
-[图片]  The Test Framework displays the results of a standalone build within the Editor. 测试框架在编辑器中显示独立构建的结果。  
+![插图](https://github.com/ruaruachou/UnityEbook-create-a-c-style-guide-write-cleaner-code-that-scales/blob/main/Picture/13.png?raw=true)  The Test Framework displays the results of a standalone build within the Editor. 测试框架在编辑器中显示独立构建的结果。  
 See the [Test Framework](https://docs.unity3d.com/Packages/com.unity.test-framework@1.1/manual/workflow-run-playmode-test-standalone.html) microsite for more information about getting up and running with UTF.  
 有关使用UTF启动和运行的更多信息，请参阅[测试框架](https://docs.unity3d.com/Packages/com.unity.test-framework@1.1/manual/workflow-run-playmode-test-standalone.html)微站。  
