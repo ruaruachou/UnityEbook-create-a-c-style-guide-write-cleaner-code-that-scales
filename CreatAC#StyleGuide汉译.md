@@ -2,10 +2,33 @@
 ## Contnets
 # Table of Contents
  [Introduction](#introduction)  
- 
- [Chapter 1](#chapter-1)  
-     <span style="font-size: smaller; margin-left: 2em;"><a href="#section-1-1">Section 1.1</a></span>  
-     <span style="font-size: smaller; margin-left: 2em;"><a href="#section-1-2">Section 1.2</a></span>
+   
+ [What is clean code, anyway?](#Whatiscleancodeanyway)  
+
+ [Developing as a Team](#DevelopingasaTeam)  
+     <span style="font-size: smaller; margin-left: 2em;"><a href="#Keepitsimplestupid">Keep it simple, stupid</a></span>  
+     <span style="font-size: smaller; margin-left: 2em;"><a href="#TheKISSprinciple">The KISS principle</a></span>  
+     <span style="font-size: smaller; margin-left: 2em;"><a href="#TheYAGNIprinciple">The YAGNI principle</a></span>  
+     <span style="font-size: smaller; margin-left: 2em;"><a href="#Dontcodearoundtheproblem">Don't code around the problem</a></span>  
+     <span style="font-size: smaller; margin-left: 2em;"><a href="#Improveincrementallyeveryday">Improve incrementally, every day</a></span>  
+     <span style="font-size: smaller; margin-left: 2em;"><a href="#Planbutadapt">Plan, but adapt</a></span>  
+     <span style="font-size: smaller; margin-left: 2em;"><a href="#Beconsistent">Be consistent</a></span>  
+     <span style="font-size: smaller; margin-left: 2em;"><a href="#Ittakesavillage">It takes a village</a></span>  
+     <span style="font-size: smaller; margin-left: 2em;"><a href="#Astyleguideforyouandyourteam">A style guide for you and your team</a></span>  
+[Creat a style guide](#creatastyleguide)  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Namingconvertions">Naming convertions</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Identifiernames">Identifier names</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Casingterminology">Casing terminology</a></span>  
+<span style="font-size: smaller; margin-left: 4em;"><a href="#Pascalcase">Pascal case</a></span>  
+<span style="font-size: smaller; margin-left: 4em;"><a href="#Snake case">Snake case</a></span>  
+<span style="font-size: smaller; margin-left: 4em;"><a href="#Kebabcase">Kebab case</a></span>  
+<span style="font-size: smaller; margin-left: 4em;"><a href="#Hungarian notation">Hungarian notation</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Fields and variables">Fields and variables</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Enums">Enums</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Classes and interfaces">Classes and interfaces</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Methods">Methods</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Events and handlers">Events and handlers</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Namespaces">Namespaces</a></span>  
 
 ---
 
@@ -36,7 +59,7 @@ Keep your code clean to make life easier for yourself and everyone involved in t
 This guide was written by Wilmer Lin, a 3D and visual effects artist with over 15 years of industry experience in film and television, who now works as an independent game developer and educator. Significant contributions were also made by senior technical content marketing manager Thomas Krogh-Jacobsen and senior Unity engineers Peter Andreasen, Scott Bilas, and Robert LaCruise.  
 本指南由Wilmer Lin撰写，他是一名3D和视觉特效艺术家，在电影和电视行业拥有超过15年的行业经验，现在是一名独立的游戏开发者和教育工作者。高级技术内容营销经理Thomas Krogh-Jacobsen和高级Unity工程师Peter Andreasen、Scott Bilas和Robert LaCruise也做出了重大贡献。  
 
- ### What is clean code, anyway?  
+## <span id="Whatiscleancodeanyway">What is clean code, anyway?</span>
 Most game developers would agree that clean code is any code that’s easy to read and maintain.  
 大多数游戏开发者都会认为，干净的代码是任何易于阅读和维护的代码。  
   
@@ -67,9 +90,10 @@ Whether you’re building a puzzler for mobile or a massive MMORPG targeted at c
 
 Your future teammates – and your future self – will be thankful for that.  
 你未来的队友——和你未来的自己——会为此感激。       
----
+  
 
-## <span id="chapter-1">Chapter 1</span>
+
+## <span id="DevelopingasaTeam">DEVELOPING AS A TEAM</span>
     
 > ANY FOOL CAN WRITE CODE THAT A COMPUTER CAN UNDERSTAND. GOOD PROGRAMMERS WRITE CODE THAT HUMANS CAN UNDERSTAND.”   – Martin Fowler, author of Refactoring  
 任何傻瓜都可以写出计算机能理解的代码。好的程序员写出人类能理解的代码。——Martin Fowler，*Refactoring* 的作者  
@@ -80,7 +104,8 @@ No developer is an island. As the technical needs of your game application grow,
 Before looking into how to create the style guide, let’s go over some general rules to help you scale up your Unity development.   
 在研究如何创建样式指南之前，让我们先看一些通用规则，以帮助你扩展你的Unity开发。  
 
-### KISS (keep it simple, stupid)  KISS原则（保持简单，愚蠢）
+### <span id="Keepitsimplestupid">KISS (keep it simple, stupid)  KISS原则（保持简单，愚蠢）</span>
+
 
 Let’s face it: Engineers and developers can overcomplicate things, even though computing and programming are hard enough. Use the KISS principle of “keep it simple, stupid” as a guide for finding the simplest solution to the problem at hand.  
 让我们面对现实吧：工程师和开发人员可能会过于复杂化事情，即使计算和编程已经够难了。使用“保持简单，愚蠢”的KISS原则作为指南，找到手头问题的最简单解决方案。  
@@ -88,7 +113,7 @@ Let’s face it: Engineers and developers can overcomplicate things, even though
 There’s no need to reinvent the wheel if a proven and simple technique solves your challenge. Why use a fancy new technology just for the sake of using it? Unity already includes numerous solutions in its Scripting API. For example, if the existing [Hexagonal Tilemap](https://docs.unity3d.com/Manual/Tilemap-Hexagonal) works for your strategy game, skip writing your own. The best code you can write is no code at all.   
 如果一个经过验证的简单技术可以解决你的挑战，就没有必要重新发明轮子。为什么要为了使用而使用一个新的花哨的技术呢？Unity已经在其脚本API中包含了许多解决方案。例如，如果现有的[六角形Tilemap](https://docs.unity3d.com/Manual/Tilemap-Hexagonal)适用于你的策略游戏，请跳过编写你自己的代码。你可以写的最好的代码就是没有代码。  
 
->#### The KISS principle KISS原则  
+>#### <span id="TheKISSprinciple">The KISS principle KISS原则  </span>
 >  
 >The well-known KISS principle emphasizes simplicity in design, an idea that’s been popular throughout different times, as these quotes attest:  
 众所周知的KISS原则强调设计的简单性，这是一个在不同时代都很流行的想法，正如下面的引用所证明的那样：  
@@ -113,12 +138,13 @@ There’s no need to reinvent the wheel if a proven and simple technique solves 
 >Avoid adding unnecessary complexity  
 在编程中，这意味着尽可能简化你的代码。避免增加不必要的复杂性。  
 >
->#### The YAGNI principle YAGNI原则  
+>#### <span id="TheYAGNIprinciple">The YAGNI principle YAGNI原则  </span>
 >
 >The related YAGNI principle (“you aren’t gonna need it”) instructs you to implement features only as you need them. Don’t worry about features that you might need once the stars align. Build the simplest thing that you need now and build it to work.  
 相关的YAGNI原则（“你不会需要它”）指示你只在需要时实现功能。不要担心你可能需要的功能，一旦星星排>成一条线。构建你现在需要的最简单的东西，并使其工作。  
-
-### Don’t code around the problem  不要绕过问题编码  
+  
+ 
+### <span id="Dontcodearoundtheproblem">Don’t code around the problem  不要绕过问题编码  </span>
 
 The first step of software development is to understand what you are trying to solve. This idea might seem like common sense, but too often developers get bogged down in implementing code without understanding the actual problem, or they'll modify the code until it works without fully grasping why.  
 软件开发的第一步是了解你要解决的问题。这个想法可能看起来像是常识，但是开发人员经常陷入实现代码而不了解实际问题的泥潭，或者他们会修改代码，直到它工作，而不完全掌握为什么。  
@@ -130,12 +156,13 @@ Instead of adding code to fix a problem, investigate the root cause. [Ask yourse
 不要添加代码来解决问题，而是调查根本原因。问问自己[为什么](https://en.wikipedia.org/wiki/Five_whys)会发生这种情况，而不是应用一个临时解决方案。  
   
 
-### Improve incrementally, every day  每天逐步改进  
+### <span id="Improveincrementallyeveryday">Improve incrementally, every day  每天逐步改进  </span>
 
 Making clean code is a fluid and ongoing process. Get the whole team into this mindset. Expect code cleanup to be part of your day-to-day life as a developer. Most people don’t intend to write broken code. It just evolves that way over time. Your codebase needs constant maintenance and upkeep. Budget time for that and make sure it happens.  
 制作干净的代码是一个流动的、持续的过程。让整个团队进入这种心态。期望代码清理成为你作为开发人员日常生活的一部分。大多数人并不打算写破损的代码。随着时间的推移，它就会这样发展。你的代码库需要不断的维护和保养。为此预算时间，并确保它发生。  
 
 ### Make it good, not perfect 做好，但不苛求完美  
+
 
 On the flip side, don’t strive for perfection. When your code meets production standards, it’s time to commit it and move on.  
 另一方面，不要追求完美。当你的代码符合生产标准时，就是时候提交它并继续前进了。  
@@ -143,7 +170,8 @@ On the flip side, don’t strive for perfection. When your code meets production
 Ultimately your code needs to do something. Balance implementing new functionality with code cleanup. Don’t refactor for the sake of it. Refactor when you think it will provide a benefit to you or somebody else.  
 最终你的代码需要做一些事情。平衡实现新功能和代码清理。不要为了重构而重构。当你认为它会给你或其他人带来好处时，再重构。  
 
-### Plan, but adapt 计划，但适应  
+
+### <span id="Planbutadapt">Plan, but adapt 计划，但适应  </span>
 
 In The Pragmatic Programmer, Andy Hunt and Dave Thomas write, “Rather than construction, programming is more like gardening.” Software engineering is an organic process. Be prepared if everything does not go according to plan.  
 在《务实的程序员》中，Andy Hunt和Dave Thomas写道：“与其说是建筑，不如说是园艺。”软件工程是一个有机的过程。如果一切不按计划进行，请做好准备。  
@@ -154,7 +182,8 @@ Even if you make the most elaborate drawing, designing a garden on paper will no
 Software design isn’t quite like an architect drawing blueprints because it's more malleable and less mechanical. You’ll need to react as your codebase grows.  
 软件设计不像建筑师绘制蓝图，因为它更加可塑，不那么机械。你需要随着你的代码库的增长而做出反应。
 
-### Be consistent 保持一致  
+
+### <span id="Beconsistent">Be consistent 保持一致  </span>
 
 Once you decide how to tackle a problem, approach similar things the same way. It’s not difficult but will take constant effort. Apply this principle to everything from naming (classes and methods, casing, etc.) to organizing project folders and resources.  
 一旦你决定如何解决一个问题，以相同的方式处理类似的事情。这并不困难，但需要不断的努力。将这个原则应用于从命名（类和方法、大小写等）到组织项目文件夹和资源的所有内容。  
@@ -162,7 +191,8 @@ Once you decide how to tackle a problem, approach similar things the same way. I
 Above all, have your team agree on a style guide and then follow it.  
 最重要的是，让你的团队同意一个样式指南，然后遵循它。  
 
-### It takes a village 一个村庄  
+
+### <span id="Ittakesavillage">It takes a village 一个村庄  </span>
 
 Although keeping code clean and simple is in everyone’s best interest, “clean and simple” is not the same as “easy.” Clean and simple takes effort and is hard work for beginners and experienced developers alike.  
 尽管保持代码的整洁和简单符合每个人的最大利益，但“整洁和简单”并不等于“简单”。对于初学者和有经验的开发人员来说，整洁和简单需要努力和艰苦的工作。  
@@ -170,7 +200,8 @@ Although keeping code clean and simple is in everyone’s best interest, “clea
 Your project will become messy if left unchecked. It’s a natural consequence of so many people working on different parts of a project. Everyone is responsible for pitching in and preventing code clutter, and each team member will need to read and follow the style guide. Cleanup is a group effort.  
 如果不加控制，你的项目将变得混乱。这是许多人在项目的不同部分工作的自然结果。每个人都有责任投入并防止代码混乱，每个团队成员都需要阅读并遵循样式指南。清理是一个集体的努力。  
 
->### A style guide for you and your team 你和你的团队的样式指南  
+
+>#### <span id="Astyleguideforyouandyourteam">A style guide for you and your team 你和你的团队的样式指南  </span>
 >
 >This guide focuses on the most common coding conventions you’ll encounter during Unity development. These are a subset of the [Microsoft Framework Design Guidelines](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/), which include an extensive number of rules beyond what is presented here.  
 本指南重点介绍了Unity开发过程中遇到的最常见的编码约定。这些是[Microsoft Framework Design Guidelines](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/)的一个子集，其中包括大量的规则，超出了本文介绍的范围。   
@@ -185,7 +216,10 @@ Your project will become messy if left unchecked. It’s a natural consequence o
 当你的样式指南与本文档或Microsoft Framework Design Guidelines冲突时，它应该优先于它们，因为这将允许你的团队在整个项目中保持统一的风格。  
 >  
 
-## CREATE A C# STYLE GUIDE  创建一个C#样式指南  
+
+
+## <span id="creatastyleguide">CREATE A C# STYLE GUIDE  创建一个C#样式指南</span>
+
 "THERE ARE ONLY TWO HARD THINGS IN COMPUTER SCIENCE: CACHE INVALIDATION & NAMING THINGS.”– Phil Karlton, software engineer  
 “计算机科学中只有两件难事：缓存失效和命名事物。”——Phil Karlton，软件工程师  
 
@@ -217,7 +251,7 @@ We created an [example](https://github.com/thomasjacobsen-unity/Unity-Code-Style
 Let’s dive in.  
 让我们深入研究一下。  
 
-### Naming conventions 命名约定  
+### <span id="Namingconventions">Naming conventions 命名约定  </span>  
 
 There’s a deep psychology involved in giving something a name. A name tells us how that entity fits into the world. What is it? Who is it? What can it do for us?  
 给某物命名涉及到深层的心理学。一个名字告诉我们这个实体如何适应这个世界。它是什么？它是谁？它能为我们做什么？  
@@ -228,7 +262,8 @@ The names of your variables, classes, and methods aren’t mere labels. They car
 Here are some guidelines to follow for naming.  
 以下是一些命名的指导原则。  
 
-### Identifier names 标识符名称  
+
+### <span id="Identifiernames">Identifier names 标识符名称  </span>
 
 An [identifier](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/lexical-structure#identifiers) is any name you assign to a type (class, interface, struct, delegate, or enum), member, variable, or namespace. Identifiers must begin with a letter or an underscore (_).  
 [标识符](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/lexical-structure#identifiers)是你分配给类型（类、接口、结构、委托或枚举）、成员、变量或命名空间的任何名称。标识符必须以字母或下划线（_）开头。  
@@ -236,12 +271,13 @@ An [identifier](https://learn.microsoft.com/en-us/dotnet/csharp/language-referen
 Avoid special characters (backslashes, symbols, Unicode characters) in your identifiers, even though C# permits them. These can interfere with certain Unity command-line tools. Steer clear of unusual characters to ensure compatibility with most platforms.  
 避免在你的标识符中使用特殊字符（反斜杠、符号、Unicode字符），即使C#允许它们。这些可能会干扰某些Unity命令行工具。避免使用不寻常的字符，以确保与大多数平台的兼容性。
   
->### Casing terminology 大小写术语  
+
+>#### <span id="Casingterminology">Casing terminology 大小写术语  </span>
 >
 >You can’t define variables with spaces in the name because C# uses the space character to separate identifiers. Casing schemes can alleviate the problem of using compound names or phrases in source code. There are several wellknown naming and casing conventions.  
 你不能用空格来定义变量的名称，因为C#使用空格字符来分隔标识符。大小写方案可以缓解在源代码中使用复合名称或短语的问题。有几种众所周知的命名和大小写约定。  
 >
->#### Camel case 骆驼命名法  
+>#### <span id="Camel case">Camel case 骆驼命名法  </span>
 >
 >Also known as camel caps, camel case is the practice of writing phrases without spaces or punctuation, separating words with a single capitalized letter. The very first letter is lowercase. Local variables and method parameters are camel case.  
 也称为骆驼大写，骆驼命名法是一种不使用空格或标点符号的短语写法，用一个大写字母分隔单词。第一个字母是小写的。局部变量和方法参数是骆驼命名法。  
@@ -251,7 +287,7 @@ Avoid special characters (backslashes, symbols, Unicode characters) in your iden
 &emsp;maxHealthPoints  
 &emsp;endOfFile  
 >
->#### Pascal case 帕斯卡命名法  
+>#### <span id="Pascalcase">Pascal case 帕斯卡命名法  </span>
 >
 >Pascal case is a variation of camel case, where the initial letter is capitalized. Use this for class and method names in Unity development. Public fields can be pascal case as well. For example:  
 帕斯卡命名法是骆驼命名法的一种变体，其中初始字母是大写的。在Unity开发中使用这个类和方法名。公共字段也可以是帕斯卡命名法。例如：  
@@ -259,8 +295,9 @@ Avoid special characters (backslashes, symbols, Unicode characters) in your iden
 >&emsp;ExamplePlayerController  
 >&emsp;MaxHealthPoints  
 >&emsp;EndOfFile  
+>  
 >
->#### Snake case 蛇命名法  
+>#### <span id="Snake case">Snake case 蛇命名法   </span>
 >
 >In this case, spaces between words are replaced with an underscore character.
 For example:  
@@ -270,7 +307,7 @@ For example:
 &emsp;max_health_points  
 &emsp;end_of_file  
 >
->#### Kebab case 烤肉串命名法  
+>#### <span id="Kebabcase">Kebab case 烤肉串命名法   </span>
 >
 >Here, spaces between words are replaced with dashes. The words appear on a “skewer” of dash characters. For example:  
 在这里，单词之间的空格被破折号替换。这些单词出现在一个破折号字符的“串”上。例如：  
@@ -283,7 +320,7 @@ For example:
 >The problem with kebab case is that many programming languages use the dash as a minus sign. Some languages interpret numbers separated by dashes as calendar dates.  
 烤肉串命名法的问题在于，许多编程语言使用破折号作为减号。一些语言将用破折号分隔的数字解释为日历日期。  
 >
->#### Hungarian notation 匈牙利命名法  
+>#### <span id="Hungarian notation">Hungarian notation 匈牙利命名法   </span>
 >
 >The variable or function name often indicates its intention or type. For example:  
 变量或函数名通常表示其意图或类型。例如：  
@@ -294,7 +331,9 @@ For example:
 >Hungarian notation is an older convention and is not common in Unity development.  
 匈牙利命名法是一个较旧的约定，在Unity开发中并不常见。  
 
-### Fields and variables 字段和变量  
+
+
+### <span id="Fields and variables">Fields and variables 字段和变量   </span>  
 
 Consider these rules for your variables and [fields](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/fields):  
 考虑一下你的变量和[字段](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/fields)的规则:  
@@ -418,7 +457,8 @@ var dictionary = new Dictionary<string, List<GameObject>>();
 var powerUps = PowerUpManager.GetPowerUps();
 ```  
 
-#### Enums 枚举
+
+### <span id="Enums">Enums 枚举    </span>  
 Enums are special value types defined by a set of named constants. By default, the constants are integers, counting up from 0.  
 枚举是由一组命名常量定义的特殊值类型。默认情况下，常量是整数，从0开始计数。  
 
@@ -459,7 +499,9 @@ public enum AttackModes
 }
 
 ```  
-#### Classes and interfaces 类和接口  
+
+### <span id="Classes and interfaces">Classes and interfaces 类和接口    </span>  
+
 
 Follow these standard rules when naming your classes and interfaces:  
 在命名类和接口时，请遵循这些标准规则:  
@@ -505,7 +547,8 @@ public interface IDamageable<T>
 
 ```  
 
-#### Methods 方法  
+
+### <span id="Methods">Methods 方法     </span>  
 
 In C#, every executed instruction is performed in the context of a method.  
 在C#中，每个执行的指令都是在方法的上下文中执行的。  
@@ -539,7 +582,8 @@ return (transform.position == newPosition);
 }
 ```
   
-#### Events and event handlers 事件和事件处理程序
+
+### <span id="#Events and event handlers">Events and event handlers 事件和事件处理程序     </span>  
 
 Events in C# implement the Observer pattern. This software design pattern defines a relationship in which one object, the subject (or publisher), can notify a list of dependent objects called observers (or subscribers). Thus, the subject can broadcast state changes to its observers without tightly coupling the objects involved.  
 C#中的事件实现了观察者模式。这种软件设计模式定义了一种关系，其中一个对象，主题(或发布者)，可以通知一组称为观察者(或订阅者)的依赖对象。因此，主题可以向它的观察者广播状态变化，而不会紧密地耦合涉及的对象。  
@@ -610,7 +654,8 @@ public struct CustomEventArgs
  }
 }
 ```  
-### Namespaces  命名空间  
+
+### <span id="Namespaces">Namespaces  命名空间     </span>  
 
 Use a [namespaces](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/namespaces) to ensure that  your classes, interfaces, enums, and so on won’t conflict with existing ones from other namespaces or the global  namespace. Namespaces can also prevent conflicts with third-party assets from the Asset Store.  
 使用[命名空间](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/types/namespaces)来确保你的类、接口、枚举等不会与其他命名空间或全局命名空间中的现有命名空间发生冲突。命名空间也可以防止与来自资产商店的第三方资产发生冲突。  
