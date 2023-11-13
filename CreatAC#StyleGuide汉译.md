@@ -29,6 +29,29 @@
 <span style="font-size: smaller; margin-left: 2em;"><a href="#Methods">Methods</a></span>  
 <span style="font-size: smaller; margin-left: 2em;"><a href="#Events and handlers">Events and handlers</a></span>  
 <span style="font-size: smaller; margin-left: 2em;"><a href="#Namespaces">Namespaces</a></span>  
+[Formating](#Formatting)  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Properties">Properties</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Serialization">Serialization</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#What is EditorConfig?">What is EditorConfig?</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Horizontal spacing">Horizontal spacing</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Vertical spacing">Vertical spacing</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Regions">Regions</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Code formatting in Visual Studio">Code formatting in Visual Studio</a></span>  
+[Classes](#Classes)  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#The newspaper metaphor">The newspaper metaphor</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Class organization">Class organization</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Single-responsibility principle">Single-responsibility principle</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Refactoring example">Refactoring example</a></span>  
+[Methods](#Methods)  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Extension methods">Extension methods</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#The DRY principle: Don't repeat yourself">The DRY principle: Don't repeat yourself</a></span>  
+[Comments](#Comments)  
+[Common pitfalls](#Commonpitfalls)  
+[Conclusion](#Conclusion)  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#References">References</a></span>  
+[Appendix: Script templates](#AppendixScripttemplates)  
+[Appendix: Testing and debugging](#AppendixTestinganddebugging)  
+[Unity TestFramework](#UnityTestFramework)  
 
 ---
 
@@ -548,7 +571,7 @@ public interface IDamageable<T>
 ```  
 
 
-### <span id="Methods">Methods 方法     </span>  
+## <span id="Methods">Methods 方法     </span>  
 
 In C#, every executed instruction is performed in the context of a method.  
 在C#中，每个执行的指令都是在方法的上下文中执行的。  
@@ -699,7 +722,7 @@ If the script needs to refer to classes with the same name from different namesp
 
 
 
-## Formatting 格式化  
+## <span id="Formatting">Formatting 格式化      </span>  
 "IF YOU WANT YOUR CODE TO BE EASY TO WRITE, MAKE IT EASY TO READ.”
 – Robert C. Martin, author of Clean Code and Agile Software Development  
 “如果你想让你的代码易于编写，那就让它易于阅读。”——《代码整洁之道》和《敏捷软件开发》的作者罗伯特·C·马丁  
@@ -716,7 +739,8 @@ In all cases, consider how your team will implement each formatting rule and the
 Let’s take a look at formatting guidelines.  
 让我们来看看格式化指南。  
 
-#### Properties 属性  
+
+### <span id="Properties">Properties 属性    </span>  
 
 A property provides a flexible mechanism to read, write, or compute class values. Properties behave as if they were public member variables, but in fact they’re special methods called [accessors](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/using-properties). Each property has a get and set method to access a private field, called a [backing field](https://learn.microsoft.com/en-us/ef/core/modeling/backing-field?tabs=data-annotations).  
 属性提供了一种灵活的机制来读取、写入或计算类值。属性的行为就像它们是公共成员变量一样，但实际上它们是称为[accessors](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/using-properties)的特殊方法。每个属性都有一个get和set方法来访问一个私有字段，称为[backing field](https://learn.microsoft.com/en-us/ef/core/modeling/backing-field?tabs=data-annotations)。  
@@ -777,7 +801,7 @@ public class PlayerHealth
     public void SetMaxHealth(int newMaxValue) => _maxHealth = newMaxValue;
 }
 ```  
-#### Serialization 序列化  
+### <span id="Serialization">Serialization 序列化     </span>  
 
 Script serialization is the automatic process of transforming data structures or object states into a format that Unity can store and reconstruct later. For performance reasons, Unity handles serialization differently than in other programming environments.  
 脚本序列化是将数据结构或对象状态自动转换为Unity可以存储和重建的格式的过程。出于性能的考虑，Unity处理序列化的方式与其他编程环境不同。  
@@ -949,7 +973,7 @@ switch (someExpression)
 }
 
 ```  
->#### What is EditorConfig? 什么是EditorConfig?  
+>### <span id="What is EditorConfig?">What is EditorConfig? 什么是EditorConfig?    </span>  
 >
 >Do you have multiple developers working on the same project with different editors and IDEs? Consider using an [EditorConfig](https://learn.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options?view=vs-2019) file.  
 你是否有多个开发人员在同一个项目上使用不同的编辑器和IDE?考虑使用[EditorConfig](https://learn.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options?view=vs-2019)文件。  
@@ -966,7 +990,9 @@ EditorConfig设置优先于全局Visual Studio文本编辑器设置。只要你�
 >See the GitHub repo for some [real-world samples](https://github.com/editorconfig/editorconfig/wiki/Projects-Using-EditorConfig).  
 请参阅GitHub repo中的一些[真实样本](https://github.com/editorconfig/editorconfig/wiki/Projects-Using-EditorConfig)。  
 
-### Horizontal spacing 水平间距
+
+### <span id="Horizontal spacing">orizontal spacing 水平间距   </span>  
+
 Something as simple as spacing can enhance your code’s appearance onscreen. Your personal formatting preferences can vary, but try the following suggestions to improve readability:  
 简单的间距可以增强你的代码在屏幕上的外观。你个人的格式化偏好可能会有所不同，但是尝试以下建议来提高可读性:  
 
@@ -1068,7 +1094,7 @@ public float            GroundDistance = 0.4f;
 public LayerMask        GroundMask;
 ```  
 
-### Vertical spacing 垂直间距  
+### <span id="Vertical spacing">Vertical spacing 垂直间距   </span>  
 
 You can use the vertical spacing to your advantage as well. Keep related parts of the script together and use blank lines to your advantage. Try these suggestions to organize your code from top to bottom:  
 你也可以利用垂直间距。将脚本的相关部分放在一起，并利用空白行。尝试以下建议，从上到下组织你的代码:  
@@ -1091,7 +1117,8 @@ if-then-else块(如果它有助于可读性)
 Keep this to a minimum and note on your style guide where applicable.  
 将其最小化，并在适用的地方在你的样式指南中注明。  
 
-### Regions 区域  
+
+### <span id="Regions">Regions 区域  </span>  
 
 The #region directive enables you to collapse and hide sections of code in C# files, making large files more manageable and easier to read.  
 #region指令使你能够折叠和隐藏C#文件中的代码部分，使大文件更易于管理和阅读。  
@@ -1102,7 +1129,7 @@ However, if you follow the general advice for Classes from this guide, your clas
 >**Note:** Many developers consider regions to be code smells or anti-patterns. Decide as a team on which side of the debate you fall.  
 **注意:** 许多开发人员认为区域是代码气味或反模式。作为一个团队决定你在辩论的哪一边。  
   
->#### Code formatting in Visual Studio for Mac 在Visual Studio for Mac中的代码格式化  
+>#### <span id="Code formatting in Visual Studio">Code formatting in Visual Studio for Mac 在Visual Studio for Mac中的代码格式化  </span>  
 >
 >Don’t despair if these formatting rules seem overwhelming. Modern IDEs make it efficient to set up and enforce them. You can create a template of formatting rules and then convert your project files at once.  
 如果这些格式化规则看起来令人不知所措，不要绝望。现代IDE使得设置和强制执行它们变得高效。你可以创建一个格式化规则的模板，然后一次转换你的项目文件。  
@@ -1150,7 +1177,8 @@ Visual Studio使得遵循样式指南变得很容易。然后，格式化就像�
 虽然这不是特定于清洁代码的，但一定要查看[10 ways to speed up your programming workflow in Unity with Visual Studio](https://blog.unity.com/engine-platform/10-ways-to-speed-up-your-programming-workflows-in-unity-with-visual-studio-2019)。如果你应用这些生产力技巧，清洁代码就更容易格式化和重构。  
 
 
-## CLASSSES 类  
+## <span id="Classes">CLASSSES 类 </span>
+
 "NO ONE IN THE BRIEF HISTORY OF COMPUTING HAS EVER WRITTEN A PIECE OF PERFECT SOFTWARE. IT’S UNLIKELY THAT YOU’LL BE THE FIRST.”  – Andy Hunt, author of The Pragmatic Programmer  
 “在计算机的简短历史上，没有人写过一段完美的软件。你不太可能是第一个。”——《The Pragmatic Programmer》的作者Andy Hunt  
 
@@ -1160,7 +1188,8 @@ According to Robert C. Martin’s Clean Code, the first rule of classes is that 
 Limiting the size of each class makes it more focused and cohesive. It’s easy to keep adding on top of an existing class until it overextends with functionality. Instead make a conscious effort to keep the classes short. Big, bloated classes become difficult to read and troubleshoot.  
 限制每个类的大小使其更加专注和内聚。很容易在现有类的基础上添加功能，直到它过度扩展。相反，要有意识地保持类的简短。大而臃肿的类变得难以阅读和排除故障。  
 
-### The newspaper metaphor  报纸的隐喻  
+
+### <span id="The newspaper metaphor">The newspaper metaphor  报纸的隐喻   </span>  
 
 Imagine the source code of a class as a news article. You start reading from the top, where the headline and byline catch your eye. The lead-in paragraph gives you a rough summary, then you glean more details as you continue downward.  
 想象一下一个类的源代码就像一篇新闻文章。你从头开始阅读，标题和署名吸引了你的注意。引语段给你一个粗略的摘要，然后你在继续向下阅读时获得更多的细节。  
@@ -1177,7 +1206,8 @@ For example, you might make a method called ThrowBall that references other meth
 Though each news article is short, a newspaper or news website will have many such collected stories. When taken together, the articles comprise a unified, functional whole. Think of your Unity project in the same way. It has numerous classes that must come together to form a larger, yet coherent, application.  
 虽然每篇新闻文章都很短，但报纸或新闻网站会有许多这样的文章。当这些文章放在一起时，它们构成了一个统一的、功能完整的整体。以同样的方式来思考你的Unity项目。它有许多类必须结合在一起，形成一个更大的、但连贯的应用程序。  
   
->#### Class organization 类组织  
+
+>#### <span id="Class organization">Class organization 类组织  </span>  
 >
 >Each class will need some standardization. Group class members into sections to organize them:  
 每个类都需要一些标准化。将类成员分组到部分中以组织它们:  
@@ -1192,7 +1222,8 @@ Though each news article is short, a newspaper or news website will have many su
 >Recall the recommended class naming rules in Unity: The source file name must match the name of the Monobehaviour in the file. You might have other internal classes in the file, but only one Monobehaviour should exist per file.  
 回想一下Unity中推荐的类命名规则:源文件名必须与文件中Monobehaviour的名字匹配。你可能在文件中有其他内部类，但每个文件只能有一个Monobehaviour。  
 
-### Single-responsibility principle 单一职责原则  
+
+### <span id="Single-responsibility principle">Single-responsibility principle 单一职责原则  </span>  
 
 Remember the goal is to keep each class short. In software design, the singleresponsibility principle guides you toward simplicity.  
 记住目标是保持每个类的长度短。在软件设计中，单一职责原则指导你走向简单。  
@@ -1232,7 +1263,7 @@ You’ll still require a Paddle script but its sole job is to tie these other cl
 Note that clean code is not always the most compact code. Even when you use shorter classes, the total number of lines may increase during refactoring. However, each individual class becomes easier to read. When the time comes to debug or add new features, this simplified structure helps keep everything in its place.  
 注意，清洁代码并不总是最紧凑的代码。即使你使用更短的类，在重构过程中，总行数也可能会增加。然而，每个单独的类变得更容易阅读。当时机成熟时，调试或添加新功能，这种简化的结构有助于保持一切井然有序。  
 
->#### Refactoring example 重构示例  
+>#### <span id="Refactoring example">Refactoring example 重构示例   </span>  
 >
 >For a more in-depth look at refactoring a simple project, see [How to architect code as your project scales](https://unity.com/how-to/how-architect-code-your-project-scales). This article demonstrates how to break down larger Monobehaviours into smaller pieces using the single-responsibility principle.  
 有关重构一个简单项目的更深入的了解，请参阅[How to architect code as your project scales](https://unity.com/how-to/how-architect-code-your-project-scales)。本文演示了如何使用单一职责原则将较大的Monobehaviour分解成较小的部分。  
@@ -1240,7 +1271,9 @@ Note that clean code is not always the most compact code. Even when you use shor
 >You can also watch Mikael Kalms’s original presentation, “[From Pong to 15-person project](https://www.youtube.com/watch?v=1le4vScG3gk),” from Unite Berlin.  
 
 
-## MMETHODS 方法  
+
+## <span id="Methods">METHODS 方法 </span>
+
 "YOU KNOW YOU ARE WORKING ON CLEAN CODE WHEN EACH ROUTINE YOU READ TURNS OUT TO BE PRETTY MUCH WHAT YOU EXPECTED.”  – Ward Cunningham, inventor of Wiki and cofounder of eXtreme Programming  
 “当你读到的每一个例程都变成了你所期望的东西时，你就知道你正在处理干净的代码。”——Ward Cunningham，Wiki的发明者和eXtreme Programming的联合创始人  
 
@@ -1271,7 +1304,8 @@ Though side effects are useful for certain tasks, they can lead to unintended co
 While the Boolean flag as an argument seems innocuous, it can lead to [tangled implementation](https://martinfowler.com/bliki/FlagArgument.html) or broken single-responsibility.  
 虽然布尔标志作为参数似乎是无害的，但它可能会导致[纠缠的实现](https://martinfowler.com/bliki/FlagArgument.html)或破坏单一职责。  
 
-### Extension methods  扩展方法  
+
+### <span id="Extension methods">Extension methods  扩展方法  </span>  
 
 [Extension methods](https://learn.unity.com/tutorial/kuo-zhan-fang-fa) offer a way to add additional functionality to classes that might otherwise be sealed and can be a clean way to extend the UnityEngine API.  
 扩展方法提供了一种方法来为可能被封装的类添加额外的功能，并且可以是扩展UnityEngine API的一种干净的方法。  
@@ -1313,7 +1347,8 @@ For organization purposes, define your extension methods in a static class. For 
 Extension methods can build many useful utilities without the need to create more Monobehaviours. See [Unity Learn: Extension Methods](https://learn.unity.com/tutorial/kuo-zhan-fang-fa) to add them to your gamedev bag of tricks.  
 扩展方法可以构建许多有用的实用程序，而无需创建更多的Monobehaviours。请参阅[Unity Learn: Extension Methods](https://learn.unity.com/tutorial/kuo-zhan-fang-fa)将它们添加到你的gamedev技巧包中。  
 
->#### The DRY principle: Don’t repeat yourself  DRY原则:不要重复自己  
+
+>#### <span id="The DRY principle: Don't repeat yourself">The DRY principle: Don’t repeat yourself  DRY原则:不要重复自己  </span>  
 >
 >In The Pragmatic Programmer, Andy Hunt and Dave Thomas formulated the DRY principle, or, “don’t repeat yourself.” This oft-spoken mantra in software engineering advises programmers to avoid duplicate or repetitious logic.  
 在《The Pragmatic Programmer》中，Andy Hunt和Dave Thomas制定了DRY原则，即“不要重复自己”。这个在软件工程中经常被提及的口头禅建议程序员避免重复或重复的逻辑。  
@@ -1375,7 +1410,9 @@ private void PlayFXWithSound(ParticleSystem particle,AudioClip clip, Vector3 hit
 >Here, we’ve extracted the core functionality into the PlayFXWithSound method. If you need to adjust the logic, you only need to change it in one method rather than in both PlayExplosionA and PlayExplosionB.  
 在这里，我们将核心功能提取到PlayFXWithSound方法中。如果你需要调整逻辑，你只需要在一个方法中改变它，而不是在PlayExplosionA和PlayExplosionB中都改变它  
 
-## COMMENTS 注释  
+
+## <span id="Comments">COMMENTS 注释 </span>
+
 "CODE IS LIKE HUMOR. IF YOU HAVE TO EXPLAIN IT, IT’S BAD.”– Cory House, software architect and author   代码就像幽默。如果你不得不解释它，那就是坏的。——Cory House，软件架构师和作者  
 
 Well-placed comments enhance the readability of your code. Excessive or frivolous comments can have the opposite effect. Like all things, strike a balance when using them.  
@@ -1464,7 +1501,9 @@ Also, be realistic. That TODO you left in the code five years ago? You’re neve
 **避免归因**: 你不需要添加署名，例如，// added by devA or devB，特别是如果你使用源代码控制。  
 
 
-## COMMON PIFALLLS 常见陷阱  
+
+## <span id="Commonpitfalls">COMMON PIFALLLS 常见陷阱  </span>  
+
 "IF DEBUGGING IS THE PROCESS OF REMOVING SOFTWARE BUGS, THEN PROGRAMMING MUST BE THE PROCESS OF PUTTING THEM IN.   — Edsger W. Dijkstra, computer science pioneer   
 如果调试是消除软件错误的过程，那么编程必须是把它们放进去的过程。——Edsger W. Dijkstra，计算机科学先驱  
 
@@ -1503,7 +1542,9 @@ rest of your code to continue to work afterward.
 — **过多的评论**: 注释可以帮助解释不直观的代码。然而，开发人员可能会过度使用它们。每个变量或语句的实时评论是不必要的。记住，最好的评论是一个良好命名的方法或类。如果你将你的逻辑分成更小的片段，较短的代码片段需要较少的解释。  
 
 
-## CONCLUSION 结论  
+
+## <span id="Conclusion">CONCLUSION 结论   </span>  
+
 "PROGRAMMING IS NOT A ZEROSUM GAME. TEACHING SOMETHING TO A FELLOW PROGRAMMER DOESN’T TAKE IT AWAY FROM YOU.”
 — John Carmack, cofounder of id Software  
 “编程不是一个零和游戏。教给一个程序员一些东西并不会把它从你身边带走。”——id Software的联合创始人John Carmack  
@@ -1532,7 +1573,8 @@ If you’re looking for help on how to clean up your code, reach out to Unity’
 One of the services offered by Accelerate Solutions is CAP (Code, Assets and  Performance). This two-week consulting engagement begins with a three-day deep dive into your code and assets to uncover the root causes of performance issues. This will come with an actionable and detailed report with best practice recommendations. To learn more about this or other services Unity Accelerate Solutions offers, [speak to a Unity representative today](https://create.unity.com/contact-unity-expert).  
 Accelerate Solutions提供的服务之一是CAP(代码、资产和性能)。这个为期两周的咨询项目从为期三天的深入研究你的代码和资产开始，以发现性能问题的根本原因。这将提供一个可行的和详细的报告，其中包含最佳实践建议。要了解更多关于Unity Accelerate Solutions提供的这项服务或其他服务，请[今天与Unity代表交谈](https://create.unity.com/contact-unity-expert)。  
 
-#### References  参考资料  
+
+#### <span id="References">References  参考资料    </span>  
 
 This guide is a short list of best practices used in computing. For more information, refer to the [Microsoft Framework Design Guideline](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/), which serve as an overarching style guide for this document.  
 本指南是计算机中使用的最佳实践的简短列表。有关更多信息，请参阅[Microsoft Framework Design Guideline](https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/)，它们作为本文档的总体样式指南。  
@@ -1544,7 +1586,9 @@ Clean Code: A Handbook of Agile Software Craftsmanship. Robert C. Martin, 2008. 
 
 The Pragmatic Programmer, 20th Anniversary Edition. David Thomas and Andrew Hunt, 2019, Addison Wesley, ISBN 978-0135957059.  
 
-## APPENDIX: SCRIPTT TEMPLATES  附录:脚本模板  
+
+## <span id="AppendixScripttemplates">APPENDIX: SCRIPTT TEMPLATES  附录:脚本模板    </span>  
+
 "TALK IS CHEAP. SHOW ME THE CODE.” — Linus Torvalds, creator of Linux and Git  
 “说话是廉价的。给我看代码。”——Linux和Git的创造者Linus Torvalds  
 
@@ -1678,7 +1722,7 @@ See this [support article](https://support.unity.com/hc/en-us/articles/210223733
 有关自定义脚本模板的更多信息，请参阅[支持文章](https://support.unity.com/hc/en-us/articles/210223733-How-to-customize-Unity-script-templates)。此外，检查附加的项目，了解一些额外的脚本模板示例。  
 
 
-## APPENDIX: TESTING AND DEBUGGERRING  附录:测试和调试  
+## <span id="AppendixTestinganddebugging">APPENDIX: TESTING AND DEBUGGERRING  附录:测试和调试   </span>  
 
 "EBUGGING IS LIKE BEING A DETECTIVE IN A CRIME MOVIE WHERE YOU ARE ALSO THE MURDERER." — Filipe Fortes    
  "调试就像是在一部犯罪电影中扮演侦探，而你也是凶手。" —— Filipe Fortes  
@@ -1715,7 +1759,8 @@ That’s the gist of it. If you develop software using this methodology, you ten
 Like most of the tenets of clean code, TDD takes extra work in the short-term but often results in the improvement of long-term maintenance and readability.  
 像大多数清洁代码的原则一样，TDD需要额外的短期工作，但通常会导致长期维护和可读性的改进。  
 
-### Unity Test Framework Unity测试框架  
+
+### <span id="UnityTestFramework">Unity Test Framework Unity测试框架    </span>  
 
 The [Unity Test Framework (UTF)](https://docs.unity3d.com/Packages/com.unity.test-framework@1.1/manual/index.html), formerly known as the Unity Test Runner, provides a standard test framework for Unity developers. UTF uses NUnit, an open-source testing library for .NET languages.  
 Unity测试框架(UTF)，以前称为Unity测试运行器，为Unity开发人员提供了一个标准的测试框架。UTF使用NUnit，一个用于.NET语言的开源测试库。  
