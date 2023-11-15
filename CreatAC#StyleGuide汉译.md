@@ -6,52 +6,54 @@
  [What is clean code, anyway?](#Whatiscleancodeanyway)  
 
  [Developing as a Team](#DevelopingasaTeam)  
-     <span style="font-size: smaller; margin-left: 2em;"><a href="#Keepitsimplestupid">Keep it simple, stupid</a></span>  
-     <span style="font-size: smaller; margin-left: 2em;"><a href="#TheKISSprinciple">The KISS principle</a></span>  
-     <span style="font-size: smaller; margin-left: 2em;"><a href="#TheYAGNIprinciple">The YAGNI principle</a></span>  
-     <span style="font-size: smaller; margin-left: 2em;"><a href="#Dontcodearoundtheproblem">Don't code around the problem</a></span>  
-     <span style="font-size: smaller; margin-left: 2em;"><a href="#Improveincrementallyeveryday">Improve incrementally, every day</a></span>  
-     <span style="font-size: smaller; margin-left: 2em;"><a href="#Planbutadapt">Plan, but adapt</a></span>  
-     <span style="font-size: smaller; margin-left: 2em;"><a href="#Beconsistent">Be consistent</a></span>  
-     <span style="font-size: smaller; margin-left: 2em;"><a href="#Ittakesavillage">It takes a village</a></span>  
-     <span style="font-size: smaller; margin-left: 2em;"><a href="#Astyleguideforyouandyourteam">A style guide for you and your team</a></span>  
-[Creat a style guide](#creatastyleguide)  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Namingconvertions">Naming convertions</a></span>  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Identifiernames">Identifier names</a></span>  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Casingterminology">Casing terminology</a></span>  
-<span style="font-size: smaller; margin-left: 4em;"><a href="#Pascalcase">Pascal case</a></span>  
-<span style="font-size: smaller; margin-left: 4em;"><a href="#Snake case">Snake case</a></span>  
-<span style="font-size: smaller; margin-left: 4em;"><a href="#Kebabcase">Kebab case</a></span>  
-<span style="font-size: smaller; margin-left: 4em;"><a href="#Hungarian notation">Hungarian notation</a></span>  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Fields and variables">Fields and variables</a></span>  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Enums">Enums</a></span>  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Classes and interfaces">Classes and interfaces</a></span>  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Methods">Methods</a></span>  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Events and handlers">Events and handlers</a></span>  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Namespaces">Namespaces</a></span>  
-[Formating](#Formatting)  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Properties">Properties</a></span>  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Serialization">Serialization</a></span>  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#What is EditorConfig?">What is EditorConfig?</a></span>  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Horizontal spacing">Horizontal spacing</a></span>  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Vertical spacing">Vertical spacing</a></span>  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Regions">Regions</a></span>  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Code formatting in Visual Studio">Code formatting in Visual Studio</a></span>  
-[Classes](#Classes)  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#The newspaper metaphor">The newspaper metaphor</a></span>  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Class organization">Class organization</a></span>  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Single-responsibility principle">Single-responsibility principle</a></span>  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Refactoring example">Refactoring example</a></span>  
+     <span style="font-size: smaller; margin-left: 2em;"><a href="#Keepitsimplestupid">Keep it simple, stupid KISS原则（保持简单，愚蠢）</a></span>  
+     <span style="font-size: smaller; margin-left: 2em;"><a href="#TheKISSprinciple">The KISS principle KISS原则</a></span>  
+     <span style="font-size: smaller; margin-left: 2em;"><a href="#TheYAGNIprinciple">The YAGNI principle YAGNI原则</a></span>  
+     <span style="font-size: smaller; margin-left: 2em;"><a href="#Dontcodearoundtheproblem">Don't code around the problem 不要绕过问题编码</a></span>  
+     <span style="font-size: smaller; margin-left: 2em;"><a href="#Improveincrementallyeveryday">Improve incrementally, every day  每天逐步改进</a></span>  
+     <span style="font-size: smaller; margin-left: 2em;"><a href="#Planbutadapt">Plan, but adapt 计划，但适应</a></span>  
+     <span style="font-size: smaller; margin-left: 2em;"><a href="#Beconsistent">Be consistent  保持一致</a></span>  
+     <span style="font-size: smaller; margin-left: 2em;"><a href="#Ittakesavillage">It takes a village  一个村庄</a></span>  
+     <span style="font-size: smaller; margin-left: 2em;"><a href="#Astyleguideforyouandyourteam">A style guide for you and your team  你和你的团队的样式指南</a></span>  
+[Creat a style guide  创建一个C#样式指南](#creatastyleguide)  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Namingconvertions">Naming convertions 命名约定</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Identifiernames">Identifier names 标识符名称</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Casingterminology">Casing terminology 大小写术语</a></span>  
+<span style="font-size: smaller; margin-left: 4em;"><a href="#Camel case">Camel case 驼峰命名法</a></span>  
+<span style="font-size: smaller; margin-left: 4em;"><a href="#Pascalcase">Pascal case   帕斯卡命名法</a></span>  
+<span style="font-size: smaller; margin-left: 4em;"><a href="#Snake case">Snake case   蛇命名法</a></span>  
+<span style="font-size: smaller; margin-left: 4em;"><a href="#Kebabcase">Kebab case  烤肉串命名法
+</a></span>  
+<span style="font-size: smaller; margin-left: 4em;"><a href="#Hungarian notation">Hungarian notation  匈牙利命名法</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Fields and variables">Fields and variables  字段和变量</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Enums">Enums  枚举</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Classes and interfaces">Classes and interfaces  类和接口</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Methods">Methods  方法</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Events and handlers">Events and handlers 事件和事件处理程序</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Namespaces">Namespaces  命名空间</a></span>  
+[Formating 格式化](#Formatting)  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Properties">Properties 属性</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Serialization">Serialization 序列化</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#What is EditorConfig?">What is EditorConfig?  什么是EditorConfig?</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Horizontal spacing">Horizontal spacing   水平间距</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Vertical spacing">Vertical spacing  垂直间距</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Regions">Regions  区域</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Code formatting in Visual Studio">Code formatting in Visual Studio Visual Studio中的代码格式化</a></span>  
+[Classes 类](#Classes)  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#The newspaper metaphor">The newspaper metaphor  报纸的隐喻</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Class organization">Class organization 类组织</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Single-responsibility principle">Single-responsibility principle  单一职责原则</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Refactoring example">Refactoring example 重构示例</a></span>  
 [Methods](#Methods)  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#Extension methods">Extension methods</a></span>  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#The DRY principle: Don't repeat yourself">The DRY principle: Don't repeat yourself</a></span>  
-[Comments](#Comments)  
-[Common pitfalls](#Commonpitfalls)  
-[Conclusion](#Conclusion)  
-<span style="font-size: smaller; margin-left: 2em;"><a href="#References">References</a></span>  
-[Appendix: Script templates](#AppendixScripttemplates)  
-[Appendix: Testing and debugging](#AppendixTestinganddebugging)  
-[Unity TestFramework](#UnityTestFramework)  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#Extension methods">Extension methods 拓展方法</a></span>  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#The DRY principle: Don't repeat yourself">The DRY principle: Don't repeat yourself DRY原则</a></span>  
+[Comments 注释](#Comments)  
+[Common pitfalls 常见陷阱](#Commonpitfalls)  
+[Conclusion 结论](#Conclusion)  
+<span style="font-size: smaller; margin-left: 2em;"><a href="#References">References 参考资料</a></span>  
+[Appendix: Script templates 附录:脚本模板](#AppendixScripttemplates)  
+[Appendix: Testing and debugging 附录:测试和调试](#AppendixTestinganddebugging)  
+[Unity TestFrameworkUnity 测试框架](#UnityTestFramework)  
 
 ---
 
@@ -274,7 +276,7 @@ We created an [example](https://github.com/thomasjacobsen-unity/Unity-Code-Style
 Let’s dive in.  
 让我们深入研究一下。  
 
-### <span id="Namingconventions">Naming conventions 命名约定  </span>  
+### <span id="Namingconvertions">Naming conventions 命名约定  </span>  
 
 There’s a deep psychology involved in giving something a name. A name tells us how that entity fits into the world. What is it? Who is it? What can it do for us?  
 给某物命名涉及到深层的心理学。一个名字告诉我们这个实体如何适应这个世界。它是什么？它是谁？它能为我们做什么？  
@@ -300,7 +302,7 @@ Avoid special characters (backslashes, symbols, Unicode characters) in your iden
 >You can’t define variables with spaces in the name because C# uses the space character to separate identifiers. Casing schemes can alleviate the problem of using compound names or phrases in source code. There are several wellknown naming and casing conventions.  
 你不能用空格来定义变量的名称，因为C#使用空格字符来分隔标识符。大小写方案可以缓解在源代码中使用复合名称或短语的问题。有几种众所周知的命名和大小写约定。  
 >
->#### <span id="Camel case">Camel case 骆驼命名法  </span>
+>#### <span id="Camel case">Camel case 驼峰命名法  </span>
 >
 >Also known as camel caps, camel case is the practice of writing phrases without spaces or punctuation, separating words with a single capitalized letter. The very first letter is lowercase. Local variables and method parameters are camel case.  
 也称为骆驼大写，骆驼命名法是一种不使用空格或标点符号的短语写法，用一个大写字母分隔单词。第一个字母是小写的。局部变量和方法参数是骆驼命名法。  
@@ -606,7 +608,7 @@ return (transform.position == newPosition);
 ```
   
 
-### <span id="#Events and event handlers">Events and event handlers 事件和事件处理程序     </span>  
+### <span id="#Events and handlers">Events and event handlers 事件和事件处理程序     </span>  
 
 Events in C# implement the Observer pattern. This software design pattern defines a relationship in which one object, the subject (or publisher), can notify a list of dependent objects called observers (or subscribers). Thus, the subject can broadcast state changes to its observers without tightly coupling the objects involved.  
 C#中的事件实现了观察者模式。这种软件设计模式定义了一种关系，其中一个对象，主题(或发布者)，可以通知一组称为观察者(或订阅者)的依赖对象。因此，主题可以向它的观察者广播状态变化，而不会紧密地耦合涉及的对象。  
